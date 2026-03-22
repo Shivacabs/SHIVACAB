@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tempo Traveller Booking</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+form {
+    background: #ffffff;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #5b86e5;
+    outline: none;
+    box-shadow: 0 0 6px rgba(91, 134, 229, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #5b86e5;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #36d1dc;
+}
+
+button[type="button"] {
+    background: #28a745;
+    margin-bottom: 10px;
+}
+
+button[type="button"]:hover {
+    background: #218838;
+}
+.hero {
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+      <div class="hero"> 
+
+<h2>🚐 Tempo Traveller Booking</h2>
+
+<form id="tempoForm">
+
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Phone:</label>
+    <input type="text" id="phone" required>
+
+    <label>Pickup Location:</label>
+    <input type="text" id="pickup" required>
+    <button type="button" onclick="getLocation()">📍 Use Current Location</button>
+
+    <label>Destination:</label>
+    <input type="text" id="destination" required>
+
+    <label>Date:</label>
+    <input type="date" id="date" required>
+
+    <label>Time:</label>
+    <input type="time" id="time" required>
+
+    <label>Traveller Type:</label>
+    <select id="vehicle" required>
+        <option value="">Select</option>
+        <option value="12 Seater">12 Seater</option>
+        <option value="14 Seater">14 Seater</option>
+        <option value="17 Seater">17 Seater</option>
+        <option value="20 Seater">20 Seater</option>
+    </select>
+
+    <label>Number of Passengers:</label>
+    <input type="number" id="passengers" min="1" required>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+document.getElementById("tempoForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let pickup = document.getElementById("pickup").value;
+    let destination = document.getElementById("destination").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let vehicle = document.getElementById("vehicle").value;
+    let passengers = document.getElementById("passengers").value;
+
+    let message = `Tempo Traveller Booking:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Pickup: ${pickup}%0A
+Destination: ${destination}%0A
+Date: ${date}%0A
+Time: ${time}%0A
+Vehicle: ${vehicle}%0A
+Passengers: ${passengers}`;
+
+    let whatsappNumber = "918618182400";
+
+    let url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(url, "_blank");
+});
+
+/* Live location */
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("Geolocation not supported.");
+    }
+}
+
+function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    let locationText = `https://www.google.com/maps?q=${lat},${lon}`;
+    document.getElementById("pickup").value = locationText;
+}
+
+function showError(error) {
+    alert("Please allow location access.");
+}
+</script>
+
+</body>
+</html>

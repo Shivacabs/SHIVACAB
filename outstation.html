@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outstation Trip Booking</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+form {
+    background: #ffffff;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #5b86e5;
+    outline: none;
+    box-shadow: 0 0 6px rgba(91, 134, 229, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #5b86e5;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #36d1dc;
+}
+
+/* Location button */
+button[type="button"] {
+    background: #28a745;
+    margin-bottom: 10px;
+}
+
+button[type="button"]:hover {
+    background: #218838;
+}
+.hero {
+  background-image: url('https://protravels.co.in/wp-content/uploads/2021/09/Services-Outstation-travel-image.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+    <div class="hero"> 
+
+<h2>🚐 Outstation Trip Booking</h2>
+
+<form id="outstationForm">
+
+    <label>Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Phone:</label>
+    <input type="text" id="phone" required>
+
+    <label>Trip Type:</label>
+    <select id="tripType" required>
+        <option value="">Select</option>
+        <option value="One Way">One Way</option>
+        <option value="Round Trip">Round Trip</option>
+    </select>
+
+    <label>Pickup Location:</label>
+    <input type="text" id="pickup" required>
+    <button type="button" onclick="getLocation()">📍 Use Current Location</button>
+
+    <label>Destination City:</label>
+    <input type="text" id="destination" placeholder="e.g. Mysore, Ooty" required>
+
+    <label>Start Date:</label>
+    <input type="date" id="startDate" required>
+
+    <label>Return Date (for round trip):</label>
+    <input type="date" id="returnDate">
+
+    <label>Number of Passengers:</label>
+    <input type="number" id="passengers" min="1" required>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+document.getElementById("outstationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let tripType = document.getElementById("tripType").value;
+    let pickup = document.getElementById("pickup").value;
+    let destination = document.getElementById("destination").value;
+    let startDate = document.getElementById("startDate").value;
+    let returnDate = document.getElementById("returnDate").value;
+    let passengers = document.getElementById("passengers").value;
+
+    let message = `Outstation Trip Booking:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Trip Type: ${tripType}%0A
+Pickup: ${pickup}%0A
+Destination: ${destination}%0A
+Start Date: ${startDate}%0A
+Return Date: ${returnDate}%0A
+Passengers: ${passengers}`;
+
+    let whatsappNumber = "918618182400";
+
+    let url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(url, "_blank");
+});
+
+/* Live location */
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("Geolocation not supported.");
+    }
+}
+
+function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    let locationText = `https://www.google.com/maps?q=${lat},${lon}`;
+    document.getElementById("pickup").value = locationText;
+}
+
+function showError(error) {
+    alert("Unable to get location. Please allow permission.");
+}
+</script>
+
+</body>
+</html>

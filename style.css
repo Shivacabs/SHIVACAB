@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+}
+
+header {
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 { color: #ffc107; }
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1502877338535-766e1452684a') center/cover;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero h2 {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    font-size: 38px;
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services, .pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+form input, form textarea, form select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e0a800;
+}
+
+.contact-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.call-btn {
+    background: #007bff !important;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+.card a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+}
+
+.card a:hover {
+    color: #5b86e5;
+}
+.hero {
+  background-image: url('https://media.gettyimages.com/id/2161574316/video/daily-commute-in-indian-metropolis-a-taxis-perspective.jpg?s=640x640&k=20&c=uChCV0RFubtk9sdsS8PzshAkfFCh7M5aQxN1eZPZyC4=');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+header {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/082/367/non_2x/black-abstract-header-with-rectangles-modern-widescreen-banner-simple-texture-illustration-vector.jpg'); /* your image path */
+  /* background-size: auto; */
+   background-size: 100% ; 
+  background-position: top ;
+  bottom 1px:
+  padding: 2px;
+  color: white; if text over image */
+}
+/* header {
+  background-image: url('https://cdn.pixabay.com/photo/2016/08/03/09/03/universe-1566159_640.jpg'); /* your image path */
+   /* or try '100% auto' */
+  /* background-repeat: no-repeat;
+  background-position: top;
+} */ 
