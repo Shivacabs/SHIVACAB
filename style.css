@@ -176,3 +176,51 @@ header {
         <li>Additional driver bata applies after 10:00 PM.</li>
     </ul>
 </div>
+/* Make text scale properly */
+body {
+    font-size: 16px;
+}
+
+/* Make header responsive */
+header h1 {
+    font-size: 60px;
+}
+
+/* Cards responsive layout */
+.services, .pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Each card */
+.card {
+    width: 250px;
+    margin: 10px;
+}
+
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 18px; /* slightly zoomed */
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    .card {
+        width: 90%;  /* full width on mobile */
+    }
+
+    .hero h2 {
+        font-size: 20px;
+        padding: 10px;
+    }
+}@media (max-width: 768px) {
+    body {
+        zoom: 1.1;
+    }
+}width: 100%;
+max-width: 1200px;
