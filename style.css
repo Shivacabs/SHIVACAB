@@ -224,3 +224,48 @@ header h1 {
     }
 }width: 100%;
 max-width: 1200px;
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+    /* Increase overall size */
+    body {
+        font-size: 18px;
+    }
+
+    /* Make everything full width */
+    .services, .pricing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Cards full width */
+    .card {
+        width: 90%;
+        margin: 15px 0;
+    }
+
+    /* Fix Terms & Charges section */
+    .terms {
+        width: 90%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    /* Fix buttons */
+    .contact-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-buttons a {
+        width: 90%;
+        text-align: center;
+    }
+}
+.terms {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
