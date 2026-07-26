@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Local Trip Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
 /* Page background */
@@ -18,7 +19,16 @@ h2 {
     color: white;
     margin-top: 30px;
 }
-
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.form-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;}
 /* Form container */
 form {
     background: #ffffff;
@@ -82,12 +92,61 @@ button[type="button"]:hover {
 }
 
 .hero {
-  background-image: url('https://img.freepik.com/premium-vector/man-car-road-trip-bg-vector-illustration-flat-2_764382-92270.jpg');
+  background-image: url('https://www.jaipurcitycabs.com/assets/img/service/city-taxi-cab-service.webp');
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
   color: white;
   text-align: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}.form-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+}@media (max-width: 768px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .form-container {
+        width: 95%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    input, select, button {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+}html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow-x: hidden;
+}section, div {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}.form-container {
+    margin: 20px auto;
+}body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 </style>
 <body>
